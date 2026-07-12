@@ -1,7 +1,7 @@
 [build]
-  base = ""
-  publish = "client/dist"
-  command = "unzip romantic_gift_website-new.zip -d . && cd client && if [ -f pnpm-lock.yaml ]; then pnpm install && pnpm run build; elif [ -f yarn.lock ]; then yarn install && yarn build; else npm ci && npm run build; fi"
+  base = "client"
+  publish = "dist"
+  command = "if [ -f pnpm-lock.yaml ]; then pnpm install && pnpm run build; elif [ -f yarn.lock ]; then yarn install && yarn build; else npm ci && npm run build; fi"
 
 [[redirects]]
   from = "/*"
